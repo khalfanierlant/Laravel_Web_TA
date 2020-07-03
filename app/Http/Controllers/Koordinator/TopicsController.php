@@ -93,7 +93,7 @@ class TopicsController extends Controller
                 ->leftJoin('group_topic','group_topic.topic_id','topics.id')
                 ->leftJoin('groups','group_topic.group_id','groups.id')
                 ->join('users AS dosen1','dosen1.id','topics.dosen1_id')
-                ->groupBy('dosen1.id')
+                ->groupBy('dosen1.name')
                 ->where('topics.period_id',$period_id)
                 ->get();
 

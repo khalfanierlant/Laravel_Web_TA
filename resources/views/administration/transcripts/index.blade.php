@@ -88,11 +88,11 @@
 			var form = '<form method="GET" action="/tu/transcripts/create">';
 			form += '<div class="form-group"> \
 				  	<label for="comment">NIP Kaprodi:</label> \
-				  		<input class="form-control" type="text" value="@if (isset($kaprodi) && count($kaprodi) > 0) {{$kaprodi->nip}}@endisset" name="nip" placeholder="NIP Kaprodi"> \
+				  		<input class="form-control" type="text" value="@if (isset($kaprodi) && count((array)$kaprodi) > 0) {{$kaprodi->nip}}@endisset" name="nip" placeholder="NIP Kaprodi"> \
 					</div> ';
 			form += '<div class="form-group"> \
 				  	<label for="comment">Nama Kaprodi:</label> \
-				  		<input class="form-control" value="@if (isset($kaprodi) && count($kaprodi) > 0){{$kaprodi->name}}@endisset" type="text" name="name" placeholder="Nama Kaprodi"> \
+				  		<input class="form-control" value="@if (isset($kaprodi) && count((array)$kaprodi) > 0){{$kaprodi->name}}@endisset" type="text" name="name" placeholder="Nama Kaprodi"> \
 					</div> ';
 
 			form += '<div align="right"><input class="btn btn-primary btn-sm" type="submit" value="Save"/></div></form>';
