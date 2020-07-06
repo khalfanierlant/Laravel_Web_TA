@@ -46,7 +46,7 @@ class UsersController extends Controller
     public function index(Request $request, Builder $htmlBuilder)
     {
         if ($request->ajax()) {
-            $data = User::select(['users.id','users.username','users.no_induk', 'users.email','roles.display_name'])
+            $data = User::select(['users.id','users.username', 'users.name', 'users.no_induk', 'users.email','roles.display_name'])
                     ->join('role_user','role_user.user_id','users.id')
                     ->join('roles','role_user.role_id','roles.id');
             return DataTables::of($data)
@@ -57,7 +57,8 @@ class UsersController extends Controller
 
         $html = $htmlBuilder
           ->addColumn(['data' => 'username', 'name'=>'users.username', 'title'=>'Username'])
-          ->addColumn(['data' => 'no_induk', 'name'=>'users.no_induk', 'title'=>'No Induk'])
+          ->addColumn(['data' => 'name', 'name'=>'users.name', 'title'=>'Name'])
+          ->addColumn(['data' => 'no_induk', 'name'=>'users.no_induk', 'title'=>'No. Induk'])
           ->addColumn(['data' => 'email', 'name'=>'users.email', 'title'=>'Email'])
           ->addColumn(['data' => 'display_name', 'name'=>'roles.display_name', 'title'=>'Role'])
           ->addColumn(['data' => 'action', 'name'=>'action', 'title'=>'Action', 'orderable'=>false, 'searchable'=>false]);

@@ -10,7 +10,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Insert New User</h4>
+          <h4 class="modal-title"> User Information</h4>
         </div>
         <div class="modal-body">
           <p></p>
@@ -163,9 +163,8 @@
 		}
 		this.edit = function(row,id) {
 			var row = row.parentNode.parentNode.cells;
-
 			data = [];
-			for (var i = 0, lt = row.length; i < lt-1; i++) {
+			for (var i = 0; i < row.length-1; i++) {
 				data.push(row[i].innerHTML);
 			}
 
