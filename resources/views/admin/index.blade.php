@@ -6,7 +6,7 @@
     <div class="col-md-12">
 
       <ul class="breadcrumb">
-        <li><span class="glyphicon glyphicon-home"></span><a href="{{ url('/home') }}">&nbsp;&nbsp;&nbsp; Dashboard</a></li>
+        <li><span class="glyphicon glyphicon-home"></span><a href="{{ url('/home') }}">&nbsp;&nbsp;&nbsp;Dashboard</a></li>
       </ul>
 
       <!-- Panel -->
